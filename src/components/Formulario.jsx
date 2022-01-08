@@ -3,12 +3,13 @@ import React from 'react'
 
 export const Formulario = () => {
     return (
+        <div className='container'>
             <form>
                 <div className="form-group">
                     <label className="col-md-4 control-label">
                         Nombre
                     </label>
-                    <div className="col-md-5">
+                    <div>
                         <input
                             id="name"
                             name="name"
@@ -20,7 +21,7 @@ export const Formulario = () => {
                     <label className="col-md-4 control-label">
                         Usuario
                     </label>
-                    <div className="col-md-5">
+                    <div>
                         <input
                             id="user"
                             name="user"
@@ -32,7 +33,7 @@ export const Formulario = () => {
                     <label className="col-md-4 control-label">
                         Email
                     </label>
-                    <div className="col-md-5">
+                    <div>
                         <input
                             id="email"
                             name="email"
@@ -41,5 +42,6 @@ export const Formulario = () => {
                     </div>
                 </div>
             </form>
+        </div>
     )
 }
