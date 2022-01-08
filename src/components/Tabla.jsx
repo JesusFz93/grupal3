@@ -9,14 +9,17 @@ export const Tabla = () => {
   }, []);
 
   const [lista, setLista] = useState([]);
+  let formu = <Formulario />;
 
   const editItem = (name, username, mail) => {
     console.log(name);
     console.log(username);
     console.log(mail);
+
+    formu = <Formulario nombre={name} usuario={username} correo={mail} />;
   };
 
-  const formu = <Formulario />;
+  // nombre, usuario, correo
 
   return (
     <div className="container">

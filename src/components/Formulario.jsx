@@ -7,7 +7,7 @@ export const Formulario = ({ nombre, usuario, correo }) => {
 
   useEffect(() => {
     console.log(nombre, usuario, correo);
-  }, []);
+  }, [nombre, usuario, correo]);
 
   return (
     <div className="container">

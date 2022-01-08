@@ -8,7 +8,7 @@ export const HomePage = () => {
     <>
       <Title titulo="Tabla de elementos" />
       <Tabla />
-      <Formulario nombre="jose" usuario="jal" correo="ss" />
+      {/* <Formulario nombre="jose" usuario="jal" correo="ss" /> */}
     </>
   );
 };
