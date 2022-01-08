@@ -36,7 +36,7 @@ export const Tabla = () => {
                 <td>{x.email}</td>
                 <td>
                   <a
-                    href="#"
+                    href="/"
                     onClick={() =>
                       editItem(x.name, x.username, x.email)
                     }
