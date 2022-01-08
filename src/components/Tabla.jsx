@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Formulario } from "./Formulario";
 
 export const Tabla = () => {
   useEffect(() => {
@@ -14,6 +15,8 @@ export const Tabla = () => {
     console.log(username);
     console.log(mail);
   };
+
+  const formu = <Formulario />;
 
   return (
     <div className="container">
@@ -34,18 +37,19 @@ export const Tabla = () => {
               <td>{x.username}</td>
               <td>{x.email}</td>
               <td>
-                <a
-                  href="/"
+                <button
+                  type="button"
                   onClick={() => editItem(x.name, x.username, x.email)}
                   className="btn btn-primary"
                 >
                   Editar
-                </a>
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+      {formu}
     </div>
   );
 };
