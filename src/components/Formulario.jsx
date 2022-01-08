@@ -20,7 +20,8 @@ export const Formulario = ({ nombre, usuario, correo }) => {
               name="name"
               type="text"
               className="form-control input-md"
-              onChange={(e) => setName(e.target.value)}
+              //   onChange={(e) => setName(e.target.value)}
+              defaultValue={nombre}
             />
           </div>
         </div>
@@ -32,7 +33,8 @@ export const Formulario = ({ nombre, usuario, correo }) => {
               name="user"
               type="text"
               className="form-control input-md"
-              onChange={(e) => setUser(e.target.value)}
+              //   onChange={(e) => setUser(e.target.value)}
+              defaultValue={usuario}
             />
           </div>
         </div>
@@ -44,7 +46,8 @@ export const Formulario = ({ nombre, usuario, correo }) => {
               name="mail"
               type="email"
               className="form-control input-md"
-              onChange={(e) => setEmail(e.target.value)}
+              //   onChange={(e) => setEmail(e.target.value)}
+              defaultValue={correo}
             />
           </div>
         </div>
