@@ -28,25 +28,21 @@ export const Tabla = () => {
         </thead>
         <tbody>
           {lista.map((x) => (
-            <>
-              <tr>
-                <td key={x.id}>{x.id}</td>
-                <td>{x.name}</td>
-                <td>{x.username}</td>
-                <td>{x.email}</td>
-                <td>
-                  <a
-                    href="/"
-                    onClick={() =>
-                      editItem(x.name, x.username, x.email)
-                    }
-                    className="btn btn-primary"
-                  >
-                    Editar
-                  </a>
-                </td>
-              </tr>
-            </>
+            <tr key={x.id}>
+              <td>{x.id}</td>
+              <td>{x.name}</td>
+              <td>{x.username}</td>
+              <td>{x.email}</td>
+              <td>
+                <a
+                  href="/"
+                  onClick={() => editItem(x.name, x.username, x.email)}
+                  className="btn btn-primary"
+                >
+                  Editar
+                </a>
+              </td>
+            </tr>
           ))}
         </tbody>
       </table>
