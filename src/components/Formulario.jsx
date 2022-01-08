@@ -1,7 +1,14 @@
-import React from 'react'
+import React, {useState} from 'react'
+
 
 
 export const Formulario = () => {
+
+    const [name, setName] = useState('')
+    const [username, setUser] = useState('')
+    const [mail, setEmail] = useState('')
+
+
     return (
         <div className='container'>
             <form>
@@ -14,7 +21,9 @@ export const Formulario = () => {
                             id="name"
                             name="name"
                             type="text"
-                            className="form-control input-md"/>
+                            className="form-control input-md"
+                            onChange={(e) => setName(e.target.value)}
+                            />
                     </div>
                 </div>
                 <div className="form-group">
@@ -26,7 +35,9 @@ export const Formulario = () => {
                             id="user"
                             name="user"
                             type="text"
-                            className="form-control input-md"/>
+                            className="form-control input-md"
+                            onChange={(e) => setUser(e.target.value)}
+                            />
                     </div>
                 </div>
                 <div className="form-group">
@@ -35,10 +46,12 @@ export const Formulario = () => {
                     </label>
                     <div>
                         <input
-                            id="email"
-                            name="email"
-                            type="text"
-                            className="form-control input-md"/>
+                            id="mail"
+                            name="mail"
+                            type="email"
+                            className="form-control input-md"
+                            onChange={(e) => setEmail(e.target.value)}
+                            />
                     </div>
                 </div>
             </form>
