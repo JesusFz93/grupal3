@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { Formulario } from "./Formulario";
 
+const initialState = {
+  name: "",
+  username: "",
+  mail: "",
+};
+
 export const Tabla = () => {
+  const [obj, setObj] = useState(initialState);
+
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((data) => data.json())
@@ -9,12 +17,17 @@ export const Tabla = () => {
   }, []);
 
   const [lista, setLista] = useState([]);
+
   // let formu = <Formulario />;
 
   const editItem = (name, username, mail) => {
-    console.log(name);
-    console.log(username);
-    console.log(mail);
+    const objeto = {
+      name,
+      username,
+      mail,
+    };
+
+    setObj(objeto);
 
     // formu = <Formulario nombre={name} usuario={username} correo={mail} />;
   };
@@ -52,7 +65,7 @@ export const Tabla = () => {
           ))}
         </tbody>
       </table>
-      <Formulario />
+      <Formulario obj={obj} />
     </div>
   );
 };

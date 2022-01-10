@@ -1,14 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export const Formulario = ({ nombre, usuario, correo }) => {
-  const [name, setName] = useState("");
-  const [username, setUser] = useState("");
-  const [mail, setEmail] = useState("");
-
-  useEffect(() => {
-    console.log(nombre, usuario, correo);
-  }, [nombre, usuario, correo]);
-
+export const Formulario = ({ obj }) => {
   return (
     <div className="container">
       <form>
@@ -21,7 +13,7 @@ export const Formulario = ({ nombre, usuario, correo }) => {
               type="text"
               className="form-control input-md"
               //   onChange={(e) => setName(e.target.value)}
-              defaultValue={nombre}
+              defaultValue={obj.name}
             />
           </div>
         </div>
@@ -34,7 +26,7 @@ export const Formulario = ({ nombre, usuario, correo }) => {
               type="text"
               className="form-control input-md"
               //   onChange={(e) => setUser(e.target.value)}
-              defaultValue={usuario}
+              defaultValue={obj.username}
             />
           </div>
         </div>
@@ -47,7 +39,7 @@ export const Formulario = ({ nombre, usuario, correo }) => {
               type="email"
               className="form-control input-md"
               //   onChange={(e) => setEmail(e.target.value)}
-              defaultValue={correo}
+              defaultValue={obj.mail}
             />
           </div>
         </div>
