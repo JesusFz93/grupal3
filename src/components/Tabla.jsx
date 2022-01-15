@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Formulario } from "./Formulario";
+import { SearchBar } from "./SearchBar";
 
 const initialState = {
   name: "",
@@ -18,7 +19,7 @@ export const Tabla = () => {
 
   const [lista, setLista] = useState([]);
 
-  // let formu = <Formulario />;
+  const [valorBusqueda, setValorBusqueda] = useState("");
 
   const editItem = (name, username, mail) => {
     const objeto = {
@@ -28,14 +29,15 @@ export const Tabla = () => {
     };
 
     setObj(objeto);
-
-    // formu = <Formulario nombre={name} usuario={username} correo={mail} />;
   };
 
-  // nombre, usuario, correo
+  const pull_info = (data) => {
+    setValorBusqueda(data);
+  };
 
   return (
     <div className="container">
+      <SearchBar func={pull_info} />
       <table className="table" id="table">
         <thead>
           <tr>
@@ -46,23 +48,32 @@ export const Tabla = () => {
           </tr>
         </thead>
         <tbody>
-          {lista.map((x) => (
-            <tr key={x.id}>
-              <td>{x.id}</td>
-              <td>{x.name}</td>
-              <td>{x.username}</td>
-              <td>{x.email}</td>
-              <td>
-                <button
-                  type="button"
-                  onClick={() => editItem(x.name, x.username, x.email)}
-                  className="btn btn-primary"
-                >
-                  Editar
-                </button>
-              </td>
-            </tr>
-          ))}
+          {lista
+            .filter(
+              (item) =>
+                item.name.toLowerCase().includes(valorBusqueda.toLowerCase()) ||
+                item.username
+                  .toLowerCase()
+                  .includes(valorBusqueda.toLowerCase()) ||
+                item.email.toLowerCase().includes(valorBusqueda.toLowerCase())
+            )
+            .map((x) => (
+              <tr key={x.id}>
+                <td>{x.id}</td>
+                <td>{x.name}</td>
+                <td>{x.username}</td>
+                <td>{x.email}</td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => editItem(x.name, x.username, x.email)}
+                    className="btn btn-warning"
+                  >
+                    Editar
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
       <Formulario obj={obj} />
